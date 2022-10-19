@@ -31,3 +31,10 @@ class Bill(models.Model):
     status = models.IntegerField(default=0)
 
 
+class Attendance(models.Model):
+    name = models.ForeignKey(Login, on_delete=models.CASCADE,related_name='attendance')
+    attendance = models.CharField(max_length=25)
+    date = models.DateField()
+    time = models.TimeField()
+
+

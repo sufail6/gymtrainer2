@@ -25,7 +25,9 @@ class Product(forms.ModelForm):
 
 
 class AddBill(forms.ModelForm):
+    name = forms.ModelChoiceField(queryset=Login.objects.filter(is_user=True))
+
     class Meta:
         model = Bill
-        exclude = ('status', 'paid_on')
+        exclude = ('status', )
 

@@ -1,0 +1,23 @@
+{% extends 'admintemp/adminhome.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="text-center"></h3>
+    </div>
+    <form method="post" novalidate="novalidate" enctype="multipart/form-data">
+        {% csrf_token %}
+
+         <div class="form-group">
+             <label><h1><u>Attendance</u></h1></label><br><br><br>
+             <div>
+                 <input type="radio" name="attendance" value="Present" required>present<br>
+                  <input type="radio" name="attendance" value="absent" required>Absent<br><br><br>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+             </div>
+         </div>
+    </form>
+</div>
+
+{% endblock %}
